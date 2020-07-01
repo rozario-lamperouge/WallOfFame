@@ -27,6 +27,3 @@ class Review(models.Model):
 	review = models.TextField()
 	pic = models.CharField(max_length=200)
 	date = models.DateTimeField(default=datetime.now())
-
-	def __str__(self):
-		return self.stu_name
