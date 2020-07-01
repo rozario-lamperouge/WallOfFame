@@ -1,0 +1,1 @@
+web: gunicorn walloffame.wsgi --log-file -
