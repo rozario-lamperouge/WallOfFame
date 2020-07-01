@@ -15,14 +15,14 @@ def Students(request):
 	sts = Student.objects.order_by('-date')
 
 	# comparing the top college and latest completed students and stacking them in a list
-	# new = []
-	# for c in result:
-	# 	for s in sts:
-	# 		if(c==s.college):
-	# 			new.append(s)
+	new = []
+	for c in result:
+		for s in sts:
+			if(c==s.college):
+				new.append(s)
 
 	# doing the above five lines in a easier way:
-	new = [s for s in sts for c in result if(c==s.college)]
+	# new = [s for s in sts for c in result if(c==s.college)]
 
 	return render(request, 'main/home.html', {'Students':new})
 
