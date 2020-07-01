@@ -10,6 +10,7 @@ def Students(request):
                                 reverse = True)
 	# removing duplicates from the list
 	result = list(dict.fromkeys(result))
+	top = result[:10]
 
 	# ordering the students according to last date enroleed
 	sts = Student.objects.order_by('-date')
@@ -24,7 +25,7 @@ def Students(request):
 	# doing the above five lines in a easier way:
 	# new = [s for s in sts for c in result if(c==s.college)]
 
-	return render(request, 'main/home.html', {'Students':new})
+	return render(request, 'main/home.html', {'Students':new, 'Colleges':top})
 
 def Reviews(request):
 	rv = Review.objects.order_by('-date')
